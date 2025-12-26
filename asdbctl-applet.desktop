@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Apple Studio Display Brightness
+Comment=Control Apple Studio Display brightness from the system tray
+Exec=/usr/local/bin/asdbctl-applet
+Icon=display-brightness-symbolic
+Terminal=false
+Categories=Utility;Settings;HardwareSettings;
+StartupNotify=false
+X-GNOME-Autostart-enabled=true

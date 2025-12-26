@@ -47,11 +47,11 @@ class BrightnessApplet:
         self.menu.append(Gtk.SeparatorMenuItem())
 
         # Increment/Decrement buttons
-        inc_item = Gtk.MenuItem(label="+ Increase")
+        inc_item = Gtk.MenuItem(label="+5%")
         inc_item.connect('activate', self.on_increment)
         self.menu.append(inc_item)
 
-        dec_item = Gtk.MenuItem(label="- Decrease")
+        dec_item = Gtk.MenuItem(label="-5%")
         dec_item.connect('activate', self.on_decrement)
         self.menu.append(dec_item)
 
@@ -129,11 +129,11 @@ class BrightnessApplet:
         self.brightness_label.set_label(f"Brightness: {self.current_brightness}%")
 
     def on_increment(self, item):
-        new_value = min(100, self.current_brightness + 10)
+        new_value = min(100, self.current_brightness + 5)
         self.set_brightness(new_value)
 
     def on_decrement(self, item):
-        new_value = max(0, self.current_brightness - 10)
+        new_value = max(0, self.current_brightness - 5)
         self.set_brightness(new_value)
 
     def on_preset_clicked(self, item, value):

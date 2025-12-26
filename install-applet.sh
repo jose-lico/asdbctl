@@ -23,7 +23,11 @@ done
 
 if [ -n "$DEPS_TO_INSTALL" ]; then
     echo "Installing:$DEPS_TO_INSTALL"
-    sudo apt-get install -y $DEPS_TO_INSTALL
+    sudo apt-get install -y $DEPS_TO_INSTALL || {
+        echo "ERROR: Failed to install dependencies. Please run manually:"
+        echo "  sudo apt-get install -y python3-gi gir1.2-appindicator3-0.1"
+        exit 1
+    }
 fi
 
 # Install udev rule for non-root access
